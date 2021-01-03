@@ -28,7 +28,11 @@ namespace WebAppUserInterfaceCultuurplein1
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
+            services.AddScoped<UserInterfaceService>();
+
+            services.AddDbContext<Cultuurplein1AdminPageDB.Data.Cultuurplein1AdminPage.Cultuurplein1admindataContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

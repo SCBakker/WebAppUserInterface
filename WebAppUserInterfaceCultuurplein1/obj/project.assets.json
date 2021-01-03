@@ -8,19 +8,19 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\PC_01\\.nuget\\packages\\": {}
+    "C:\\Users\\stanh\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PC_01\\Documents\\WebAppUserInterface\\WebAppUserInterfaceCultuurplein1\\WebAppUserInterfaceCultuurplein1.csproj",
+      "projectUniqueName": "C:\\Users\\stanh\\Documents\\WebAppUserInterface\\WebAppUserInterfaceCultuurplein1\\WebAppUserInterfaceCultuurplein1.csproj",
       "projectName": "WebAppUserInterfaceCultuurplein1",
-      "projectPath": "C:\\Users\\PC_01\\Documents\\WebAppUserInterface\\WebAppUserInterfaceCultuurplein1\\WebAppUserInterfaceCultuurplein1.csproj",
-      "packagesPath": "C:\\Users\\PC_01\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PC_01\\Documents\\WebAppUserInterface\\WebAppUserInterfaceCultuurplein1\\obj\\",
+      "projectPath": "C:\\Users\\stanh\\Documents\\WebAppUserInterface\\WebAppUserInterfaceCultuurplein1\\WebAppUserInterfaceCultuurplein1.csproj",
+      "packagesPath": "C:\\Users\\stanh\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\stanh\\Documents\\WebAppUserInterface\\WebAppUserInterfaceCultuurplein1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\PC_01\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\stanh\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
