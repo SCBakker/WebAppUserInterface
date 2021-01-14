@@ -1,77 +1,31 @@
 ﻿@page "/Cultuurplein1"
-@using WebAppUserInterfaceCultuurplein1.Data
-@using WebAppUserInterfaceCultuurplein1db.data.WebAppUserInterfaceCultuurplein1
-
-
-@inherits OwningComponentBase<UserInterfaceService>
 
 <h1><img src="/Images/Schaff2.png" asp-append-version="true" width="90%" height="auto" /></h1>
 
-@if (shows == null)
-{
-    <p><en>Loading...</en></p>
-}
-else
-{
-    <table>
-        <thead>
-        <tr>
-            <th>
-                Voorstelling
-            </th>
-            <th>
-                Beschrijving
-            </th>
-            <th>
-                Afbeelding
-            </th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach (var show in shows)
-        {
-            <tr>
-                <td>
-                    @show.Voorstelling
-                </td>
-                <td>
-                    @show.Beschrijving
-                </td>
-                <td>
-                    <img src="@convertImageToDisplay(show.Afbeelding)" width="100px;" />
-                </td>
-            </tr>
-        }
-        </tbody>
-    </table>
-}
+<h1-1>Welkom bij Cultuurplein1!</h1-1>
+
+<p></p>
+
+<body>
+
+<h3>Algemene informatie</h3>
+
+<p></p>
+
+<p>Cultuurplein1 is een samenhang van cultuurgelegenheden bij ons in Barneveld. Waar heb jij op het moment zin in? Een kijkje bij het theater of een nieuw insturment leren bespelen bij de muziekschool? Kom snel langs bij een van onze faciliteiten!</p>
+
+<p></p>
 
 
+<div class="container">
+    <div class="center">
+        <a href="/Theater" class="btn homeknop btn-sep icon-theatre">Theater</a>
+    </div>
+</div>
 
-    @code
-    {
-    
-    [CascadingParameter]
-    private Task<AuthenticationState> authenticationStateTask { get; set; }
-
-    List<Shows> shows;
-
-
-
-
-    string convertImageToDisplay(byte[] Afbeelding)
-    {
-        if (Afbeelding != null)
-        {
-            var base64 = Convert.ToBase64String(Afbeelding);
-            var fs = string.Format("data:image/jpg;base64,{0}", base64);
-            return fs;
-        }
-        return "";
-    }
-
-    protected override void OnInitialized()
-    {
-        shows = Service.DisplayImages();
-    }
-}
+<div class="container">
+    <div class="center">
+        <a href="/muziekschool" class="btn homeknop btn-sep icon-music">Muziekschool</a>
+    </div>
+</div>
+</body>

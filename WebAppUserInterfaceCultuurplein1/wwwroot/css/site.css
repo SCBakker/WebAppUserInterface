@@ -10,6 +10,33 @@ html, body {
     height: auto;
 }
 
+h1 {
+    width: auto;
+    color: white;
+}
+
+h1-1 {
+    text-align: center;
+    color: white;
+    font-size: 32px;
+    flex-grow: 1;
+    display: block;
+    margin: auto;
+}
+
+h2 {
+    width: auto;
+    color: white;
+}
+
+h3 {
+    color: white;
+}
+
+p {
+    color: white;
+}
+
 body2 {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background: linear-gradient(to right, #5e1b2c, #9e193a, #8f1637);
@@ -35,6 +62,8 @@ h1 {
 
 .btn-sep {
     padding: 25px 60px 25px 120px;
+    width: 250px;
+    text-align: center;
 }
 
     .btn-sep:before {
@@ -45,6 +74,8 @@ h1 {
     background: #e1b600;
     cursor: pointer;
     color: #fff;
+    width: 250px;
+    text-align: center;
 }
 
     .homeknop:hover {
@@ -74,6 +105,10 @@ h1 {
 }
 
 .icon-info:before {
+    content: "\2148";
+}
+
+.icon-info2:before {
     content: "\2148";
 }
 
