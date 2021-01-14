@@ -1,11 +1,11 @@
 ﻿@page "/voorstellingen"
 @using WebAppUserInterfaceCultuurplein1.Data
-@using WebAppUserInterfaceCultuurplein1DB.Data.WebAppUserInterfaceCultuurplein1
+@using WebAppUserInterfaceCultuurplein1db.data.WebAppUserInterfaceCultuurplein1
+
 
 @inherits OwningComponentBase<UserInterfaceService>
 
-<h1>Voorstellingen</h1>
-
+<h1><img src="/Images/Schaff2.png" asp-append-version="true" width="90%" height="auto" /></h1>
 
 @if (shows == null)
 {
@@ -13,72 +13,65 @@
 }
 else
 {
-    <table class="table">
+    <table>
         <thead>
-            <tr>
-                <th>
-                    Voorstelling
-                </th>
-                <th>
-                    Beschrijving
-                </th>
-                <th>
-                    Afbeelding
-                </th>
-            </tr>
+        <tr>
+            <th>
+                Voorstelling
+            </th>
+            <th>
+                Beschrijving
+            </th>
+            <th>
+                Afbeelding
+            </th>
+        </tr>
         </thead>
         <tbody>
-            @foreach (var show in shows)
-            {
-                <tr>
-                    <td>
-                        @show.Voorstelling
-                    </td>
-                    <td>
-                        @show.Beschrijving
-                    </td>
-                    <td>
-                        <img src="@convertImageToDisplay(show.Afbeelding)" width="100px;" />
-                    </td>
-                </tr>
-            }
+        @foreach (var show in shows)
+        {
+            <tr>
+                <td>
+                    @show.Voorstelling
+                </td>
+                <td>
+                    @show.Beschrijving
+                </td>
+                <td>
+                    <img src="@convertImageToDisplay(show.Afbeelding)" width="100px;" />
+                </td>
+            </tr>
+        }
         </tbody>
     </table>
 }
 
 
 
-@code
-{
-
-public AdminPageService adminService { get; set; }
-
-[CascadingParameter]
-private Task<AuthenticationState> authenticationStateTask { get; set; }
-
-List<Shows> shows;
-
-
-protected override async Task OnInitializedAsync()
-{
-    var user = (await authenticationStateTask).User;
-    shows = await @Service.GetShowAsync(user.Identity.Name);
-
-}
-
-
-string convertImageToDisplay(byte[] Afbeelding)
-{
-    if (Afbeelding != null)
+    @code
     {
-        var base64 = Convert.ToBase64String(Afbeelding);
-        var fs = string.Format("data:image/jpg;base64,{0}", base64);
-        return fs;
-    }
-    return "";
-}
+    
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; }
 
-protected override void OnInitialized()
-{
-    shows = Service.DisplayImages();
+    List<Shows> shows;
+
+
+
+
+    string convertImageToDisplay(byte[] Afbeelding)
+    {
+        if (Afbeelding != null)
+        {
+            var base64 = Convert.ToBase64String(Afbeelding);
+            var fs = string.Format("data:image/jpg;base64,{0}", base64);
+            return fs;
+        }
+        return "";
+    }
+
+    protected override void OnInitialized()
+    {
+        shows = Service.DisplayImages();
+    }
 }

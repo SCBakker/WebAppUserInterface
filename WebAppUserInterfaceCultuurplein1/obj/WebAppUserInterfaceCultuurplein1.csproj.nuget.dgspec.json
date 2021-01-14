@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\stanh\\Documents\\WebAppUserInterface\\WebAppUserInterfaceCultuurplein1\\WebAppUserInterfaceCultuurplein1.csproj": {}
+    "C:\\Users\\PC_01\\Documents\\WebAppUserInterface\\WebAppUserInterfaceCultuurplein1\\WebAppUserInterfaceCultuurplein1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\stanh\\Documents\\WebAppUserInterface\\WebAppUserInterfaceCultuurplein1\\WebAppUserInterfaceCultuurplein1.csproj": {
+    "C:\\Users\\PC_01\\Documents\\WebAppUserInterface\\WebAppUserInterfaceCultuurplein1\\WebAppUserInterfaceCultuurplein1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\stanh\\Documents\\WebAppUserInterface\\WebAppUserInterfaceCultuurplein1\\WebAppUserInterfaceCultuurplein1.csproj",
+        "projectUniqueName": "C:\\Users\\PC_01\\Documents\\WebAppUserInterface\\WebAppUserInterfaceCultuurplein1\\WebAppUserInterfaceCultuurplein1.csproj",
         "projectName": "WebAppUserInterfaceCultuurplein1",
-        "projectPath": "C:\\Users\\stanh\\Documents\\WebAppUserInterface\\WebAppUserInterfaceCultuurplein1\\WebAppUserInterfaceCultuurplein1.csproj",
-        "packagesPath": "C:\\Users\\stanh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\stanh\\Documents\\WebAppUserInterface\\WebAppUserInterfaceCultuurplein1\\obj\\",
+        "projectPath": "C:\\Users\\PC_01\\Documents\\WebAppUserInterface\\WebAppUserInterfaceCultuurplein1\\WebAppUserInterfaceCultuurplein1.csproj",
+        "packagesPath": "C:\\Users\\PC_01\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC_01\\Documents\\WebAppUserInterface\\WebAppUserInterfaceCultuurplein1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\stanh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC_01\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,6 +39,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

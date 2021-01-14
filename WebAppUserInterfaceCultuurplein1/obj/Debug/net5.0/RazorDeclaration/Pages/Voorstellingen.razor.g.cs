@@ -13,84 +13,91 @@ namespace WebAppUserInterfaceCultuurplein1.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\stanh\Documents\WebAppUserInterface\WebAppUserInterfaceCultuurplein1\_Imports.razor"
+#line 1 "C:\Users\PC_01\Documents\WebAppUserInterface\WebAppUserInterfaceCultuurplein1\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\stanh\Documents\WebAppUserInterface\WebAppUserInterfaceCultuurplein1\_Imports.razor"
+#line 2 "C:\Users\PC_01\Documents\WebAppUserInterface\WebAppUserInterfaceCultuurplein1\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\stanh\Documents\WebAppUserInterface\WebAppUserInterfaceCultuurplein1\_Imports.razor"
+#line 3 "C:\Users\PC_01\Documents\WebAppUserInterface\WebAppUserInterfaceCultuurplein1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\stanh\Documents\WebAppUserInterface\WebAppUserInterfaceCultuurplein1\_Imports.razor"
+#line 4 "C:\Users\PC_01\Documents\WebAppUserInterface\WebAppUserInterfaceCultuurplein1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\stanh\Documents\WebAppUserInterface\WebAppUserInterfaceCultuurplein1\_Imports.razor"
+#line 5 "C:\Users\PC_01\Documents\WebAppUserInterface\WebAppUserInterfaceCultuurplein1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\stanh\Documents\WebAppUserInterface\WebAppUserInterfaceCultuurplein1\_Imports.razor"
+#line 6 "C:\Users\PC_01\Documents\WebAppUserInterface\WebAppUserInterfaceCultuurplein1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\stanh\Documents\WebAppUserInterface\WebAppUserInterfaceCultuurplein1\_Imports.razor"
+#line 7 "C:\Users\PC_01\Documents\WebAppUserInterface\WebAppUserInterfaceCultuurplein1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\stanh\Documents\WebAppUserInterface\WebAppUserInterfaceCultuurplein1\_Imports.razor"
+#line 8 "C:\Users\PC_01\Documents\WebAppUserInterface\WebAppUserInterfaceCultuurplein1\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\stanh\Documents\WebAppUserInterface\WebAppUserInterfaceCultuurplein1\_Imports.razor"
+#line 9 "C:\Users\PC_01\Documents\WebAppUserInterface\WebAppUserInterfaceCultuurplein1\_Imports.razor"
 using WebAppUserInterfaceCultuurplein1;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\stanh\Documents\WebAppUserInterface\WebAppUserInterfaceCultuurplein1\_Imports.razor"
+#line 10 "C:\Users\PC_01\Documents\WebAppUserInterface\WebAppUserInterfaceCultuurplein1\_Imports.razor"
 using WebAppUserInterfaceCultuurplein1.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\stanh\Documents\WebAppUserInterface\WebAppUserInterfaceCultuurplein1\Pages\Voorstellingen.razor"
+#line 2 "C:\Users\PC_01\Documents\WebAppUserInterface\WebAppUserInterfaceCultuurplein1\Pages\Voorstellingen.razor"
 using WebAppUserInterfaceCultuurplein1.Data;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/fetchdata")]
-    public partial class Voorstellingen : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 3 "C:\Users\PC_01\Documents\WebAppUserInterface\WebAppUserInterfaceCultuurplein1\Pages\Voorstellingen.razor"
+using WebAppUserInterfaceCultuurplein1db.data.WebAppUserInterfaceCultuurplein1;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/voorstellingen")]
+    public partial class Voorstellingen : OwningComponentBase<UserInterfaceService>
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -98,19 +105,36 @@ using WebAppUserInterfaceCultuurplein1.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 39 "C:\Users\stanh\Documents\WebAppUserInterface\WebAppUserInterfaceCultuurplein1\Pages\Voorstellingen.razor"
-       
-    private WeatherForecast[] forecasts;
+#line 52 "C:\Users\PC_01\Documents\WebAppUserInterface\WebAppUserInterfaceCultuurplein1\Pages\Voorstellingen.razor"
+     
+    
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; }
 
-    protected override async Task OnInitializedAsync()
+    List<Shows> shows;
+
+
+
+
+    string convertImageToDisplay(byte[] Afbeelding)
     {
-        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+        if (Afbeelding != null)
+        {
+            var base64 = Convert.ToBase64String(Afbeelding);
+            var fs = string.Format("data:image/jpg;base64,{0}", base64);
+            return fs;
+        }
+        return "";
+    }
+
+    protected override void OnInitialized()
+    {
+        shows = Service.DisplayImages();
     }
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private WeatherForecastService ForecastService { get; set; }
     }
 }
 #pragma warning restore 1591
