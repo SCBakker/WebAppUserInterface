@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using WebAppUserInterfaceCultuurplein1.Data;
 
 namespace WebAppUserInterfaceCultuurplein1
@@ -30,7 +31,7 @@ namespace WebAppUserInterfaceCultuurplein1
             services.AddServerSideBlazor();
             services.AddScoped<UserInterfaceService>();
 
-            services.AddDbContext<Cultuurplein1AdminPageDB.Data.Cultuurplein1AdminPage.Cultuurplein1admindataContext>(options =>
+            services.AddDbContext<WebAppUserInterfaceCultuurplein1db.data.WebAppUserInterfaceCultuurplein1.Cultuurplein1Context>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
         }

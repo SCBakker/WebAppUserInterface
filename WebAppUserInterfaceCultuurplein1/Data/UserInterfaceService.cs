@@ -2,14 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebAppUserInterfaceCultuurplein1db.data.WebAppUserInterfaceCultuurplein1;
 
 namespace WebAppUserInterfaceCultuurplein1.Data
 {
     public class UserInterfaceService
     {
-        private readonly Context _context;
+        private readonly Cultuurplein1Context _context;
 
-        public UserInterfaceService(Context context)
+        public UserInterfaceService(Cultuurplein1Context context)
         {
             _context = context;
         }
