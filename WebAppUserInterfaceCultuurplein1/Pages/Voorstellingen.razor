@@ -56,7 +56,12 @@ else
 
     List<Shows> shows;
 
+        protected override async Task OnInitializedAsync()
+        {
+            var user = (await authenticationStateTask).User;
 
+            shows = await @Service.GetShowAsync(user.Identity.Name);
+        }
 
 
     string convertImageToDisplay(byte[] Afbeelding)
