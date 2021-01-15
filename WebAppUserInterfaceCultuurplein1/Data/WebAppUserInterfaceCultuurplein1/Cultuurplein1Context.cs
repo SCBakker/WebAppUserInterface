@@ -7,6 +7,8 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace WebAppUserInterfaceCultuurplein1db.data.WebAppUserInterfaceCultuurplein1
 {
+    // Aangemaakt bij reverse Engineering (EF Power Tool)  
+
     public partial class Cultuurplein1Context : DbContext
     {
         public Cultuurplein1Context()
@@ -18,6 +20,7 @@ namespace WebAppUserInterfaceCultuurplein1db.data.WebAppUserInterfaceCultuurplei
         {
         }
 
+        // Gebruikt Data set die aangemaakt is in shows. 
         public virtual DbSet<Shows> Shows { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
